@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Home from './components/Home'
-
+import BillsContainer from './container/BillsContainer'
 
 class App extends Component {
   render() {
     return (
       <Router>
         <div className="App">
-          <Route path="/" component={Home} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/bills" component={BillsContainer} />
         </div>
       </Router>
     );
@@ -18,11 +19,3 @@ class App extends Component {
 export default App;
 
 
-{/* <Router>
-    <React.Fragment>
-      <Navbar />
-      <Route exact path="/" component={Home} />
-      <Route exact path="/about" component={About} />
-      <Route exact path="/login" component={Login} />
-    </React.Fragment>
-  </Router>) */}
