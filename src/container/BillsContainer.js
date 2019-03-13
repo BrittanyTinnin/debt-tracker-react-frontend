@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Loading from '../components/Loading'
 import { connect } from 'react-redux'
 import { fetchBills } from '../redux/actions/billsActions'
+import { Bills } from '../components/Bills'
 
 class BillsContainer extends Component {
     state = {
@@ -18,7 +19,7 @@ class BillsContainer extends Component {
     }
     return (
         <div>
-            <ul>
+            {/* <ul>
                 {this.props.bills.map((b) => 
                 <li key={b.id}>
                     <div>
@@ -30,7 +31,8 @@ class BillsContainer extends Component {
                     </div>
                 </li>
                 )}
-            </ul>
+            </ul> */}
+            <Bills bills={this.props.bills}/>
         </div>
     )
   }
