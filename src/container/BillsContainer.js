@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Loading from '../components/Loading'
 
 export default class BillsContainer extends Component {
     state = {
@@ -14,14 +15,14 @@ export default class BillsContainer extends Component {
 
   render() {
       if (this.state.bills.length === 0) {
-        return <h1>Loading...</h1>
+        return <Loading />
     }
     return (
         <div>
             <ul>
                 {this.state.bills.map((b) => 
-                <li>
-                    <div key={b.id}>
+                <li key={b.id}>
+                    <div>
                         <p>Name: {b.name}</p>
                         <p>Phone Number: {b.phone_number}</p>
                         <p>Website: {b.website}</p>
