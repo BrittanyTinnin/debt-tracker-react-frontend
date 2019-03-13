@@ -3,7 +3,7 @@ import Loading from '../components/Loading'
 import { connect } from 'react-redux'
 import { fetchBills } from '../redux/actions/billsActions'
 import { Bills } from '../components/Bills'
-import { Bill } from '../components/Bill'
+import { Link } from 'react-router-dom'
 
 class BillsContainer extends Component {
     state = {
@@ -14,15 +14,6 @@ class BillsContainer extends Component {
         this.props.fetchBills()        
     }
 
-    handleClick = () => {
-        //to view details of bill
-        //send to <Bill />
-        this.props.bills.map((b) =>
-            <Bill name={b.name} amount={b.amount} />
-        )
-    }
-
-
 
     render() {
       if (this.props.bills.length === 0) {
@@ -32,10 +23,8 @@ class BillsContainer extends Component {
         <div>
             <ul>
                 {this.props.bills.map((b) => 
-                    <button onClick={this.handleClick} key={b.id}><Bills name={b.name}/></button>
-                )}
+                    <Link to={`/bills/${b.id}`} key={b.id}><li><Bills name={b.name}/></li></Link> )}
             </ul>
-            {/* <Bills bills={this.props.bills}/> */}
         </div>
     )
   }

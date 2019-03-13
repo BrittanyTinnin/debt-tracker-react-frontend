@@ -32,6 +32,7 @@ export default class NavBar extends Component {
                 background: 'darkblue'
                 }}
                 >Home</NavLink>
+                
             </div>
         )
     }
