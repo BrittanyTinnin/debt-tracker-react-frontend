@@ -1,26 +1,25 @@
 import React, { Component } from 'react'
 import Loading from '../components/Loading'
+import { connect } from 'react-redux'
 
-export default class BillsContainer extends Component {
+class BillsContainer extends Component {
     state = {
         bills: []
     }
 
     componentDidMount() {
         //move this to redux store, then call function for this
-        fetch('http://localhost:3001/bills')
-            .then(res => res.json())
-            .then(data => this.setState({ bills: data}))
+        
     }
 
   render() {
-      if (this.state.bills.length === 0) {
+      if (this.props.bills.length === 0) {
         return <Loading />
     }
     return (
         <div>
             <ul>
-                {this.state.bills.map((b) => 
+                {this.props.bills.map((b) => 
                 <li key={b.id}>
                     <div>
                         <p>Name: {b.name}</p>
@@ -36,3 +35,13 @@ export default class BillsContainer extends Component {
     )
   }
 }
+
+const mapStateToProps = state => {
+    return {
+        bills: state.bills
+    }
+}
+
+
+
+export default connect(mapStateToProps)(BillsContainer)
