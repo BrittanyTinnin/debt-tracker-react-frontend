@@ -6,20 +6,17 @@ import { Bills } from '../components/Bills'
 import { Link } from 'react-router-dom'
 
 class BillsContainer extends Component {
-    state = {
-        bills: []
-    }
+   
 
     componentDidMount() {
         this.props.fetchBills()        
     }
-
-
+    
     render() {
-      if (this.props.bills.length === 0) {
-        return <Loading />
-    }
-    return (
+        if (this.props.bills.length === 0 ) {
+            return <Loading />
+        } 
+        return (
         <div>
             <ul>
                 {this.props.bills.map((b) => 
@@ -31,8 +28,9 @@ class BillsContainer extends Component {
 }
 
 const mapStateToProps = state => {
+    console.log(state)
     return {
-        bills: state.bills
+        bills: state.bills.bills
     }
 }
 

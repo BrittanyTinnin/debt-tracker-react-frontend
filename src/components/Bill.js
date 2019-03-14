@@ -2,10 +2,11 @@ import React from 'react'
 
 export const Bill = (props) => 
 <div>
-     <p>Name: {props.name}</p>
-     {/* <p>Phone Number: {props.b.phone_number}</p>
-     <p>Website: {props.b.website}</p> */}
-     <p>Amount: ${props.amount}</p>
-     {/* <p>Due Date: {props.b.due_date}</p> */}
+    {console.log(props)}
+     <p>Name: {props.bill.name}</p>
+     <p>Phone Number: {props.bill.phone_number}</p>
+     <p>Website: {props.bill.website}</p>
+     <p>Amount: ${props.bill.amount}</p>
+     <p>Due Date: {props.bill.due_date}</p>
  </div>
     

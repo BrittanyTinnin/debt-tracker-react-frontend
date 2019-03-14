@@ -33,6 +33,14 @@ export default class NavBar extends Component {
                 }}
                 >Home</NavLink>
                 
+                <NavLink
+                to="/bills/new"
+                exact
+                style={link}
+                activeStyle={{
+                background: 'darkblue'
+                }}
+                >New Bill</NavLink>
             </div>
         )
     }
