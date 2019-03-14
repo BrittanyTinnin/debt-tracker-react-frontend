@@ -17,11 +17,12 @@ class App extends Component {
           <div className="App">
 
             <NavBar />
-
-            <Route exact path="/" component={Home} />
-            <Route exact path="/bills" component={BillsContainer} />
-            <Route exact path="/bills/:id" component={BillContainer} />
-            <Route exact path="/bills/new" component={BillForm} />
+            <React.Fragment>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/bills" component={BillsContainer} />
+              <Route exact path="/bills/new/bill" component={BillForm} />
+              <Route exact path='/bills/:id' component={BillContainer} />
+            </React.Fragment>
 
           </div>
         </Router>

@@ -22,6 +22,7 @@ class BillsContainer extends Component {
                 {this.props.bills.map((b) => 
                     <Link to={`/bills/${b.id}`} key={b.id}><li><Bills name={b.name}/></li></Link> )}
             </ul>
+            <Link to="/bills/new/bill">Add Bill</Link>
         </div>
     )
   }

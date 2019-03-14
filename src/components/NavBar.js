@@ -34,7 +34,7 @@ export default class NavBar extends Component {
                 >Home</NavLink>
                 
                 <NavLink
-                to="/bills/new"
+                to="/bills/new/bill"
                 exact
                 style={link}
                 activeStyle={{
@@ -42,6 +42,7 @@ export default class NavBar extends Component {
                 }}
                 >New Bill</NavLink>
             </div>
+            
         )
     }
 }
