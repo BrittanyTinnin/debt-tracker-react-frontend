@@ -28,12 +28,10 @@ class BillsContainer extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log(state)
     return {
         bills: state.bills.bills
     }
 }
-
 
 
 export default connect(mapStateToProps, { fetchBills })(BillsContainer)

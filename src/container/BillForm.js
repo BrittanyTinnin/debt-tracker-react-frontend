@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 
 export class BillForm extends Component {
-  state = {
-    bills: []
-  }
 
   render() {
     return (
@@ -15,12 +11,11 @@ export class BillForm extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  
-})
+// // const mapStateToProps = (state) => ({
+// // })
 
-const mapDispatchToProps = {
+// // const mapDispatchToProps = {
   
-}
+// // }
 
-export default connect(mapStateToProps, mapDispatchToProps)(BillForm)
+export default BillForm
