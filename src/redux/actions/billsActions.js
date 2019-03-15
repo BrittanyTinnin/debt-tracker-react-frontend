@@ -1,9 +1,7 @@
 export const fetchBills = () => dispatch => {
-    // debugger
     return fetch('http://localhost:3001/bills')
     .then(res => res.json())
     .then(bills => dispatch({ type: 'FETCH_BILLS_SUCCESS', payload: bills}))
-    // .then(bills => console.log(bills))
 }
 
 export const fetchBill = (billId) => dispatch => {
@@ -13,7 +11,9 @@ export const fetchBill = (billId) => dispatch => {
 }
 
 export const addBill = () => dispatch => {
+    console.log('inside actions addBill')
     //fetch -- method: POST
+    
 }
 
 
