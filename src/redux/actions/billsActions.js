@@ -1,19 +1,40 @@
 export const fetchBills = () => dispatch => {
     return fetch('http://localhost:3001/bills')
-    .then(res => res.json())
+    .then(handleError)
     .then(bills => dispatch({ type: 'FETCH_BILLS_SUCCESS', payload: bills}))
+    .catch(error => console.log(error))
 }
 
 export const fetchBill = (billId) => dispatch => {
     return fetch(`http://localhost:3001/bills/${billId}`)
-    .then(res => res.json())
+    .then(handleError)
     .then(bill => dispatch({ type: 'FETCH_BILL_SUCCESS', payload: bill}))
+    .catch(error => console.log(error))
 }
 
-export const addBill = () => dispatch => {
+export const addBill = (bill) => dispatch => {
     console.log('inside actions addBill')
-    //fetch -- method: POST
-    
+    return fetch('http://localhost:3001/bills', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(bill)
+    })
+    .then(handleError)
+    .then(bill => dispatch({ type: 'ADD_BILL_SUCCESS', payload: bill }))
+    .catch(error => console.log(error))
 }
 
+
+
+
+function handleError(response){
+    if (!response.ok) {
+        console.log(response)
+        return Promise.reject(response.statusText)
+    }
+    return response.json()
+}
 

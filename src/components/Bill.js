@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Bill = (props) => 
 <div>
-    {console.log(props)}
+{console.log(props)}
      <p>Name: {props.bill.name}</p>
      <p>Phone Number: {props.bill.phone_number}</p>
      <p>Website: {props.bill.website}</p>
