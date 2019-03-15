@@ -10,7 +10,10 @@ export default (state = initialState, action) => {
 
         case 'FETCH_BILL_SUCCESS':
             return {...state, bill: action.payload}
-        
+            
+        case 'ADD_BILL_SUCCESS':
+            return {...state, bill: action.payload}
+
         default:
             return state
     }
