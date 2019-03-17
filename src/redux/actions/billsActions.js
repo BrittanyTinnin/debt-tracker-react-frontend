@@ -27,6 +27,17 @@ export const addBill = (bill) => dispatch => {
 }
 
 
+//this action is not executing past line 33
+// export const deleteBill = (id) => dispatch => {
+//     debugger
+//     return dispatch(
+//         {
+//         type: 'DELETE_BILL_SUCCESS',
+//         message: console.log('inside dispatch of action'),
+//         id: id
+//     })
+// }
+
 
 
 

@@ -12,17 +12,10 @@ export class BillContainer extends Component {
     this.props.fetchBill(billId)
   }
   
-  // deleteBill = (billId) => {
-  //   // if (this.props.bill.id === billId ) {
-
-  //     console.log(this.props.bills)
-  //     const result = this.props.bills.splice(0, 1)
-  //     // }
-  //     console.log(result)
-  //   // this.setState({
-  //   //   billss: result
-  //   // })
-  //   debugger
+  // deleteBill = (e, billId) => {
+  //   e.preventDefault()
+  //   debugger;
+  //   this.props.deleteBill(billId)
   // }
 
 
@@ -31,21 +24,20 @@ export class BillContainer extends Component {
     return (
       <div>
         <h2>In the Bill Container</h2>
-        <Bill bill={this.props.bills} delete={this.deleteBill}/>
+        <Bill bill={this.props.bills} delete={this.props.deleteBill}/>
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => ({
-  bills: state.bills.bill,
-  billss: state.bills.bills
+  bills: state.bills.bill
 })
 
 const mapDispatchToProps = dispatch => {
   return {
     fetchBill: (billId) => dispatch(fetchBill(billId)),
-    // deleteBill: (billId) => dispatch(deleteBill(billId))
+    deleteBill: (id) => dispatch({type: 'DELETE_BILL'})
   }
 }
 
