@@ -14,6 +14,12 @@ export default (state = initialState, action) => {
         case 'ADD_BILL_SUCCESS':
             return {...state, bill: action.payload}
 
+        case 'DELETE_BIILL_SUCCESS':
+            console.log('inside bills reducer')
+            console.log(state.bills)
+            return { bills: state.bills.filter(bill => bill !== action.payload) }
+
+
         default:
             return state
     }

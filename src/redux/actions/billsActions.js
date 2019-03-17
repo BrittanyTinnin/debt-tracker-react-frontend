@@ -13,7 +13,6 @@ export const fetchBill = (billId) => dispatch => {
 }
 
 export const addBill = (bill) => dispatch => {
-    console.log('inside actions addBill')
     return fetch('http://localhost:3001/bills', {
         method: 'POST',
         headers: {
@@ -25,6 +24,15 @@ export const addBill = (bill) => dispatch => {
     .then(handleError)
     .then(bill => dispatch({ type: 'ADD_BILL_SUCCESS', payload: bill }))
     .catch(error => console.log(error))
+}
+
+
+export const deleteBill = billId => dispatch => {
+    console.log('inside action deleteBill')
+    return {
+        type: "DELETE_BILL_SUCCESS",
+        billId: billId
+    }
 }
 
 

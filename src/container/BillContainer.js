@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchBill } from '../redux/actions/billsActions'
+import { deleteBill } from '../redux/actions/billsActions'
 import { Bill } from '../components/Bill'
 
 export class BillContainer extends Component {
@@ -13,10 +14,11 @@ export class BillContainer extends Component {
 
 
   render() {
+
     return (
       <div>
         <h2>In the Bill Container</h2>
-        <Bill bill={this.props.bills}/>
+        <Bill bill={this.props.bills} delete={this.props.deleteBill}/>
       </div>
     )
   }
@@ -28,7 +30,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchBill: (billId) => dispatch(fetchBill(billId))
+    fetchBill: (billId) => dispatch(fetchBill(billId)),
+    deleteBill: (billId) => dispatch(deleteBill(billId))
   }
 }
 

@@ -1,21 +1,48 @@
-  create_table "bills", force: :cascade do |t|
-    t.text "name"
-    t.text "phone_number"
-    t.text "website"
-    t.text "amount"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.date "due_date"
-  end
+class AgentsList extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-  <form onSubmit={event => this.handleSubmit(event)}>
-    <p>
-        <label>add todo</label>
-        <input
-            type="text"
-            onChange={event => this.handleChange(event)}
-            value={this.state.text}
-        />
-    </p>
-    <input type="submit" />
-</form>
+  handleClick(e) {
+    e.preventDefault();
+    console.log(this.props);
+  }
+
+  render() {
+    const { agents } = this.props;
+
+    ...
+
+    var agentsNodes = agents.map(function(agent, i) {
+      if(agent.id_intervention == "") {
+        return (
+          <Agent agent={agent} key={i} ticket={t} id={row_names} onClick={this.handleClick.bind(this)} />
+        );
+      }
+    });
+    return (
+      <div id="agents">
+        <div className="agents-title">
+          <h3>Title</h3>
+        </div>
+        {agentsNodes}
+      </div>
+    );
+  }
+}
+
+class Agent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    const { agent, t } = this.props;
+
+    return (
+      <Link to='/' onClick={this.props.onClick}>
+        ...
+      </Link>
+    );
+  }
+}
