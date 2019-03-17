@@ -27,14 +27,6 @@ export const addBill = (bill) => dispatch => {
 }
 
 
-export const deleteBill = billId => dispatch => {
-    console.log('inside action deleteBill')
-    return {
-        type: "DELETE_BILL_SUCCESS",
-        billId: billId
-    }
-}
-
 
 
 
