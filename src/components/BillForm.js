@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Form from 'react-bootstrap/Form'
-import Alert from 'react-bootstrap/Alert'
 
 class BillForm extends Component {
     
