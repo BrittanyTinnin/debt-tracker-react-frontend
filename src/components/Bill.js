@@ -19,7 +19,7 @@ class Bill extends Component {
             <Card.Text>Due Date: {this.props.bill.due_date}</Card.Text>
             {/* <div>
                 <button onClick={() => this.props.deleteBill(this.props.bill.id)}>DELETE</button>
-              </div> */}
+            </div> */}
           </div>
         </Card.Body>
       </Card>

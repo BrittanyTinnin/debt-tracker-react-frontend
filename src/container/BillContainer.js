@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Loading from '../components/Loading'
 import { connect } from 'react-redux'
 import { fetchBill } from '../redux/actions/billsActions'
 import Bill from '../components/Bill'

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Loading from '../components/Loading'
 import Button from 'react-bootstrap/Button';
 import ListGroup from 'react-bootstrap/ListGroup'
-// import ListGroup from 'react-bootstrap/ListGroupItem'
 import { connect } from 'react-redux'
 import { fetchBills } from '../redux/actions/billsActions'
 import { Bills } from '../components/Bills'
@@ -25,7 +24,7 @@ class BillsContainer extends Component {
             <ListGroup>
 
             {this.props.bills.map((b) =>
-                        <ListGroup.Item><Link to={`/bills/${b.id}`} key={b.id}><Bills name={b.name}/></Link></ListGroup.Item> )}
+                        <ListGroup.Item key={b.id}><Link to={`/bills/${b.id}`} ><Bills name={b.name}/></Link></ListGroup.Item> )}
             </ListGroup>
             <Button variant="outline-dark">
                 <Link to="/bills/new/bill">Add Bill</Link>
