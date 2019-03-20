@@ -27,16 +27,6 @@ export const addBill = (bill) => dispatch => {
 }
 
 
-export const delBill = (id) => dispatch => {
-    console.log('inside action delbill')
-    return dispatch(
-        {
-        type: 'DELETE_BILL_SUCCESS',
-        payload: id
-    })
-}
-
-
 
 
 function handleError(response){

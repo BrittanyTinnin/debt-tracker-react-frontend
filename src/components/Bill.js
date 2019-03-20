@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Card from 'react-bootstrap/Card'
 import { connect } from 'react-redux'
-import { delBill } from '../redux/actions/billsActions'
 
 
 class Bill extends Component {
@@ -17,9 +16,6 @@ class Bill extends Component {
             <Card.Link href="#">{this.props.bill.website}</Card.Link>
             <Card.Text>Amount: ${this.props.bill.amount}</Card.Text>
             <Card.Text>Due Date: {this.props.bill.due_date}</Card.Text>
-            {/* <div>
-                <button onClick={() => this.props.deleteBill(this.props.bill.id)}>DELETE</button>
-            </div> */}
           </div>
         </Card.Body>
       </Card>
@@ -34,11 +30,6 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    deleteBill: (id) => dispatch(delBill(id))
-  }
-}
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Bill)
+export default connect(mapStateToProps)(Bill)
