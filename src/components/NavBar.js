@@ -7,41 +7,42 @@ const link = {
     margin: '0 6px 6px',
     background: 'blue',
     textDecoration: 'none',
-    color: 'white',
+    color: 'white'
   }
 
 export default class NavBar extends Component {
 
     render() {
         return (
-            <div>
-                <NavLink
-                to="/bills"
-                exact
-                style={link}
-                activeStyle={{
-                background: 'darkblue'
-                }}
-                >Bills</NavLink>
+                <div className="navbar">
+                    <NavLink
+                    to="/bills"
+                    exact
+                    style={link}
+                    activeStyle={{
+                        background: 'darkblue'
+                        }}
+                    >Bills</NavLink>
             
-                <NavLink
-                to="/"
-                exact
-                style={link}
-                activeStyle={{
-                background: 'darkblue'
-                }}
-                >Home</NavLink>
                 
-                <NavLink
-                to="/bills/new/bill"
-                exact
-                style={link}
-                activeStyle={{
-                background: 'darkblue'
-                }}
-                >New Bill</NavLink>
-            </div>
+                    <NavLink
+                    to="/"
+                    exact
+                    style={link}
+                    activeStyle={{
+                        background: 'darkblue'
+                    }}
+                    >Home</NavLink>
+                    
+                    <NavLink
+                    to="/bills/new/bill"
+                    exact
+                    style={link}
+                    activeStyle={{
+                        background: 'darkblue'
+                    }}
+                    >New Bill</NavLink>
+                </div>
             
         )
     }

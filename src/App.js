@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.css';
 import Home from './components/Home'
 import BillsContainer from './container/BillsContainer'
 import BillContainer from './container/BillContainer'
@@ -14,7 +15,7 @@ class App extends Component {
    
 
         <Router>
-          <div className="App">
+          <div className="App container">
 
             <NavBar />
             <React.Fragment>

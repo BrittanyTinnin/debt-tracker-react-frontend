@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import uuid from "uuid";
 import { connect } from 'react-redux'
 import { addBill } from '../redux/actions/billsActions'
 import BillForm from '../components/BillForm'
@@ -13,7 +12,6 @@ class BillFormContainer extends Component {
       website: "",
       due_date: "",
       amount: ""
-      // id: uuid(),
   }
 
   handleSubmit = (event) => {
@@ -42,8 +40,6 @@ class BillFormContainer extends Component {
   }
 }
 
-// const mapStateToProps = (state) => ({
-// })
 
 const mapDispatchToProps = dispatch => {
   return {

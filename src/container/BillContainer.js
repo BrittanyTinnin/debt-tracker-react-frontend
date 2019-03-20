@@ -1,33 +1,26 @@
 import React, { Component } from 'react'
+import Loading from '../components/Loading'
 import { connect } from 'react-redux'
 import { fetchBill } from '../redux/actions/billsActions'
-// import { deleteBill } from '../redux/actions/billsActions'
-import { Bill } from '../components/Bill'
+import Bill from '../components/Bill'
 
-export class BillContainer extends Component {
+class BillContainer extends Component {
 
 
   componentDidMount() {
     const billId = window.location.href.split('/')[4]
     this.props.fetchBill(billId)
   }
-  
-  // deleteBill = (e, billId) => {
-  //   e.preventDefault()
-  //   debugger;
-  //   this.props.deleteBill(billId)
-  // }
 
 
-  render() {
-
+  render() { 
     return (
       <div>
-        <h2>In the Bill Container</h2>
-        <Bill bill={this.props.bills} delete={this.props.deleteBill}/>
+        <Bill bill={this.props.bills} />
       </div>
     )
   }
+
 }
 
 const mapStateToProps = (state) => ({
@@ -36,8 +29,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchBill: (billId) => dispatch(fetchBill(billId)),
-    deleteBill: (id) => dispatch({type: 'DELETE_BILL'})
+    fetchBill: (billId) => dispatch(fetchBill(billId))
   }
 }
 

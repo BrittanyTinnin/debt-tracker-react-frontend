@@ -1,42 +1,44 @@
-// import React from 'react'
-
-// export const Bill = (props) => 
-// <div>
-// {console.log(props)}
-//      <p>Name: {props.bill.name}</p>
-//      <p>Phone Number: {props.bill.phone_number}</p>
-//      <p>Website: {props.bill.website}</p>
-//      <p>Amount: ${props.bill.amount}</p>
-//      <p>Due Date: {props.bill.due_date}</p>
-//      <div>
-//          <button onClick={(e) => props.delete(e, props.bill.id)}>DELETE</button>
-//      </div>
-//  </div>
-
 import React, { Component } from 'react'
+import Card from 'react-bootstrap/Card'
+import { connect } from 'react-redux'
+import { delBill } from '../redux/actions/billsActions'
 
-export class Bill extends Component {
 
-    // delete = (e, id) => {
-    //     e.preventDefault()
-    //     this.props.delete(id)
-    // }
+class Bill extends Component {
+
 
   render() {
-      console.log(this.props)
     return (
-      <div>
-        <p>Name: {this.props.bill.name}</p>
-        <p>Phone Number: {this.props.bill.phone_number}</p>
-        <p>Website: {this.props.bill.website}</p>
-        <p>Amount: ${this.props.bill.amount}</p>
-        <p>Due Date: {this.props.bill.due_date}</p>
-        <div>
-            <button onClick={() => this.props.delete(this.props.bill.id)}>DELETE</button>
-        </div>
-      </div>
+      <Card style={{ width: '20rem' }}>
+        <Card.Body>
+          <div id={this.props.bill.id}>
+            <Card.Title>{this.props.bill.name}</Card.Title>
+            <Card.Text>{this.props.bill.phone_number}</Card.Text>
+            <Card.Link href="#">{this.props.bill.website}</Card.Link>
+            <Card.Text>Amount: ${this.props.bill.amount}</Card.Text>
+            <Card.Text>Due Date: {this.props.bill.due_date}</Card.Text>
+            {/* <div>
+                <button onClick={() => this.props.deleteBill(this.props.bill.id)}>DELETE</button>
+              </div> */}
+          </div>
+        </Card.Body>
+      </Card>
+
     )
   }
 }
 
-export default Bill
+const mapStateToProps = state => {
+  return {
+    bills: state.bills
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    deleteBill: (id) => dispatch(delBill(id))
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Bill)
