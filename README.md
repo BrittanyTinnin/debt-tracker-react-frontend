@@ -1,4 +1,27 @@
 # Debt-Tracker
 
 
-### Getting Started
+## Getting Started
+
+
+### Prerequisites
+
+
+### Installing
+
+
+## Running the tests
+
+
+## Deployment
+
+
+## Built With
+
+
+## Authors
+
+
+## License
+
+
