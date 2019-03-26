@@ -40,5 +40,11 @@ const mapStateToProps = state => {
     }
 }
 
+const mapDispatchToProps = dispatch => {
+    return {
+        fetchBills: () => dispatch(fetchBills())
+    }
+}
 
-export default connect(mapStateToProps, { fetchBills })(BillsContainer)
+
+export default connect(mapStateToProps, mapDispatchToProps)(BillsContainer)

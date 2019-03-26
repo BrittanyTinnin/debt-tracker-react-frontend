@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form'
 class BillForm extends Component {
     
     render() {
-        const { handleChange, input, handleSubmit} = this.props
+        const { handleChange, input, handleSubmit } = this.props
         return (
         
         <div>
