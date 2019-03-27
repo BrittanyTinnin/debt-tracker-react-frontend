@@ -20,7 +20,7 @@ You'll have to clone down the Rails API repo and the React app repo
 Step 1:
 
 In your terminal:
-* clone down the repository - run `git@github.com:BrittanyTinnin/debt-tracker-api.git`
+* clone down the repository - run `git clone git@github.com:BrittanyTinnin/debt-tracker-api.git`
 * navigate inside repository
 * run `bundle install` or `bundle update`
 * run `rails server -p 3001`
