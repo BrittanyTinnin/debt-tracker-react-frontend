@@ -16,16 +16,18 @@ https://www.phusionpassenger.com/library/walkthroughs/deploy/ruby/ownserver/ngin
 
 ### Installing
 You'll have to clone down the Rails API repo and the React app repo
+
 Step 1:
+
 In your terminal:
-* clone down repo - run `git@github.com:BrittanyTinnin/debt-tracker-api.git`
-* navigate inside repo
+* clone down the repository - run `git@github.com:BrittanyTinnin/debt-tracker-api.git`
+* navigate inside repository
 * run `bundle install` or `bundle update`
 * run `rails server -p 3001`
 
 Step 2:
-* clone down repo - run `git clone git@github.com:BrittanyTinnin/debt-tracker-react-frontend.git`
-* navigate inside repo
+* clone down the repository - run `git clone git@github.com:BrittanyTinnin/debt-tracker-react-frontend.git`
+* navigate inside repository
 * run `npm install`
 * run `npm start`
 
@@ -44,5 +46,5 @@ This project currently has no unit tests.
 * Brittany Tinnin
 
 ## License
-
+This project is licensed under the MIT License - see the LICENSE.md file for details
 
