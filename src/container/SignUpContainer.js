@@ -19,8 +19,8 @@ class SignUpContainer extends Component {
   render() {
     return (
       <div>
-        {!this.state.showComponent ? <button onClick={this.handleClick}>Sign Up</button> : <SignUpForm/> }
-       
+        {this.state.showComponent ? <SignUpForm/> : <button onClick={this.handleClick}>Sign Up</button> }
+        {this.state.showComponent ? <LoginForm/> : <button onClick={this.handleClick}>Login</button> }
       </div>
     )
   }
