@@ -6,13 +6,13 @@ import Button from 'react-bootstrap/Button'
 
 class Bill extends Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      name: 'Not Paid'
-    }
-    this.handlePaid = this.handlePaid.bind(this)
-  }
+  // constructor(props) {
+  //   super(props)
+  //   this.state = {
+  //     name: 'Not Paid'
+  //   }
+  //   this.handlePaid = this.handlePaid.bind(this)
+  // }
 
 
   // handlePaid(){
@@ -49,7 +49,7 @@ class Bill extends Component {
             <Card.Link href="#">{this.props.bill.website}</Card.Link>
             <Card.Text>Amount: ${this.props.bill.amount}</Card.Text>
             <Card.Text>Due Date: {this.props.bill.due_date}</Card.Text>
-            <button onClick={this.handlePaid}>{this.state.name}</button>
+            {/* <button onClick={this.handlePaid}>{this.state.name}</button> */}
           </div>
         </Card.Body>
       </Card>
