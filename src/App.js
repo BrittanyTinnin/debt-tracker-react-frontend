@@ -12,11 +12,8 @@ import BillFormContainer from './container/BillFormContainer';
 class App extends Component {
   render() {
     return (
-   
-
         <Router>
           <div className="App container">
-
             <NavBar />
             <React.Fragment>
               <Route exact path="/" component={Home} />
@@ -24,7 +21,6 @@ class App extends Component {
               <Route exact path="/bills/new/bill" component={BillFormContainer} />
               <Route exact path='/bills/:id' component={BillContainer} />
             </React.Fragment>
-
           </div>
         </Router>
     );

@@ -1,9 +1,17 @@
-import React from 'react'
-import LoginContainer from '../container/LoginContainer';
+import React, { Component } from 'react'
+import LoginContainer from '../container/SignUpContainer';
 
 
-export default () => 
-<div>
-    <h1 className="text-center">Welcome to Your Bill Tracker</h1>
-    <LoginContainer />
-</div>
+class Home extends Component {
+    render() {
+        return (
+            <div>
+                <h1 className="text-center">Welcome to Your Bill Tracker</h1>
+                <LoginContainer />
+            </div>
+        )
+   
+    }
+}
+
+export default Home

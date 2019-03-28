@@ -33,7 +33,6 @@ class BillFormContainer extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <BillForm input={this.state} handleSubmit={this.handleSubmit} handleChange={this.handleChange}/>
     )
