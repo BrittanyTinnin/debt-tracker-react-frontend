@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Card from 'react-bootstrap/Card'
 import { connect } from 'react-redux'
-import Button from 'react-bootstrap/Button'
 
 
 class Bill extends Component {
