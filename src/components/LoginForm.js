@@ -8,7 +8,7 @@ class LoginForm extends Component {
         <label>Email</label>
         <input type="text" name="email" required/><br/>
         <label>password</label>
-        <input type="text" name="password" required/><br/>
+        <input type="password" name="password" required/><br/>
         <input type="submit"/>
         </form>
       </div>

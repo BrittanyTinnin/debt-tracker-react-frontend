@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { signUp } from '../redux/actions/userActions'
 
 class SignUpForm extends Component {
 
   state = {
-    first_name: ""
+    first_name: "",
+    last_name: "",
+    email: "",
+    password: ""
   }
 
   handleChange = (event) => {
@@ -14,6 +19,13 @@ class SignUpForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+    this.props.signUp(this.state)
+    this.setState({
+      first_name: "",
+      last_name: "",
+      email: "",
+      password: ""
+    })
     //post login info
     
   }
@@ -29,9 +41,9 @@ class SignUpForm extends Component {
           <label>Email:</label>
           <input type="text" name="email" /><br/>
           <label>password:</label>
-          <input type="text" name="password" /><br/>
+          <input type="password" name="password" /><br/>
           <label>password confirmation:</label>
-          <input type="text" name="password_confirmation" /><br/>
+          <input type="password" name="password_confirmation" /><br/>
           <input type="submit"/>
         </form>
       </div>
@@ -39,4 +51,16 @@ class SignUpForm extends Component {
   }
 }
 
-export default SignUpForm
+// const mapStateToProps = (state) => {
+//   return {
+
+//   }
+// }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signUp: (user) => dispatch(signUp(user))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(SignUpForm)
