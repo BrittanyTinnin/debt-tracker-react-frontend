@@ -18,13 +18,15 @@ class SignUpForm extends Component {
   }
 
   handleSubmit = (e) => {
+    console.log('inside handlesubmit for signup')
     e.preventDefault()
     this.props.signUp(this.state)
     this.setState({
       first_name: "",
       last_name: "",
       email: "",
-      password: ""
+      password: "",
+      password_confirmation: ""
     })
     //post login info
     
@@ -33,17 +35,17 @@ class SignUpForm extends Component {
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <label>First Name:</label>
-          <input type="text" name="first_name" value={this.state.first_name} onChange={this.handleChange}/><br/><p>{this.state.first_name}</p>
+          <input type="text" name="first_name" value={this.state.first_name} onChange={this.handleChange}/><br/>
           <label>Last Name:</label>
-          <input type="text" name="last_name" /><br/>
+          <input type="text" name="last_name" value={this.state.last_name} onChange={this.handleChange}/><br/>
           <label>Email:</label>
-          <input type="text" name="email" /><br/>
+          <input type="text" name="email" value={this.state.email} onChange={this.handleChange}/><br/>
           <label>password:</label>
-          <input type="password" name="password" /><br/>
+          <input type="password" name="password" value={this.state.password} onChange={this.handleChange}/><br/>
           <label>password confirmation:</label>
-          <input type="password" name="password_confirmation" /><br/>
+          <input type="password" name="password_confirmation" value={this.state.password_confirmation} onChange={this.handleChange} /><br/>
           <input type="submit"/>
         </form>
       </div>

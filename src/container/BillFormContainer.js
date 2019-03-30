@@ -24,6 +24,8 @@ class BillFormContainer extends Component {
       due_date: '',
       amount: ''
     })
+    window.alert("Successfully Created New Bill.")
+
   }
 
   handleChange = (event) => {
