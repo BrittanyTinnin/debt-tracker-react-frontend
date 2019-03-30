@@ -25,11 +25,7 @@ class SignUpForm extends Component {
       first_name: "",
       last_name: "",
       email: "",
-      password: "",
-      password_confirmation: ""
-    })
-    //post login info
-    
+      password: ""    })    
   }
 
   render() {
@@ -44,8 +40,6 @@ class SignUpForm extends Component {
           <input type="text" name="email" value={this.state.email} onChange={this.handleChange}/><br/>
           <label>password:</label>
           <input type="password" name="password" value={this.state.password} onChange={this.handleChange}/><br/>
-          <label>password confirmation:</label>
-          <input type="password" name="password_confirmation" value={this.state.password_confirmation} onChange={this.handleChange} /><br/>
           <input type="submit"/>
         </form>
       </div>

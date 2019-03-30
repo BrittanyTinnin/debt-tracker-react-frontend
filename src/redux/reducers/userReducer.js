@@ -4,8 +4,9 @@ const initialState = {
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        // case 'FETCH_BILLS_SUCCESS':
-        // return {...state, bills: action.payload}
+        case 'SIGNUP':
+        console.log('inside sigup reducer')
+        return {...state, users: action.payload}
 
         default:
             return state

@@ -1,3 +1,4 @@
+
 export const signUp = (user) => dispatch => {
     console.log('inside signUp')
     return fetch('http://localhost:3001/api/users', {
@@ -6,10 +7,11 @@ export const signUp = (user) => dispatch => {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(user)
+        body: JSON.stringify({user})
     })
     .then(handleError)
-    .then(user => console.log(user))
+    // .then(resp => console.log(resp))
+    .then(user => dispatch({ type: 'SIGNUP', payload: user}))
     .catch(error => console.log(error))
 }
 
