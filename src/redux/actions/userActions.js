@@ -48,7 +48,7 @@ export const authenticate = (userCred) => dispatch => {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({auth: userCred})
+        body: JSON.stringify({userCred})
     })
     .then(handleError)
     .then(resp => console.log(resp))
